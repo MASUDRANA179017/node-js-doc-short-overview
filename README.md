@@ -2,7 +2,7 @@
 
 
 
-#Getting Started
+//Getting Started
   *Introduction to Node.js:
 
     Node.js is a runtime environment that allows you to run JavaScript code outside the browser. It’s built on the V8 JavaScript engine and enables the development of server-side applications.
@@ -23,7 +23,7 @@
     Node.js uses Google's V8 JavaScript engine to execute JavaScript code. It compiles JavaScript to machine code for faster execution.
     The V8 engine is optimized for performance and is used in both the Chrome browser and Node.js.
 
-#Asynchronous Work
+//Asynchronous Work
   
   *Asynchronous Flow Control:
 
