@@ -4,7 +4,10 @@
 
 
 // To run this snippet, save it as a server.js file and run node server.js in your terminal. If you use mjs version of the code, you should save it as a server.mjs file and run node server.mjs in your terminal.
+
+
 const { createServer } = require('node:http');
+
 
 const hostname = '127.0.0.1';
 const port = 3000;
