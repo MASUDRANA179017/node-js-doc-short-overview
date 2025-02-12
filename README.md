@@ -72,4 +72,7 @@
   sleep (1000); 
 
   console.log ("do someting else...");
-  
+
+
+  ![Image Alt](https://github.com/MASUDRANA179017/node-js-doc-short-overview/blob/main/DOCUMENTSS/Screenshot_8.png?raw=true)
+
