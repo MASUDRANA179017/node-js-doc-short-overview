@@ -99,5 +99,14 @@ run();
 
 
 
+# More complex operations are made up of many functions:
 
+  1. initiator style / input
+  2. middleware
+  3. terminator
 
+** The "initiator style / input" is the first function in the sequence. This function will accept the original input, if any, for the operation. The operation is an executable series of functions, and the original input will primarily be:
+
+  variables in a global environment
+  direct invocation with or without arguments
+  values obtained by file system or network requests
