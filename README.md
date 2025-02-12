@@ -107,6 +107,93 @@ run();
 
 ** The "initiator style / input" is the first function in the sequence. This function will accept the original input, if any, for the operation. The operation is an executable series of functions, and the original input will primarily be:
 
-  variables in a global environment
-  direct invocation with or without arguments
-  values obtained by file system or network requests
+ 1. variables in a global environment
+ 2. direct invocation with or without arguments
+ 3. values obtained by file system or network requests
+
+
+```Copy
+
+
+  function final(someInput, callback) {
+    callback(`${someInput} and terminated by executing callback `);
+  }
+  
+  function middleware(someInput, callback) {
+    return final(`${someInput} touched by middleware `, callback);
+  }
+  
+  function initiate() {
+    const someInput = 'hello this is a function ';
+    middleware(someInput, function (result) {
+      console.log(result);
+      // requires callback to `return` result
+    });
+  }
+  
+  initiate();
+
+```
+
+
+# State management
+---
+ * Functions may or may not be state dependent. State dependency arises when the input or other variable of a function relies on an outside function.
+
+* In this way there are two primary strategies for state management:
+ 1. passing in variables directly to a function, and
+ 2. acquiring a variable value from a cache, session, file, database, network, or other outside source.
+
+
+* You will be able to perform almost all of your operations with the following 3 patterns:
+
+1. **In series:** functions will be executed in a strict sequential order, this one is most similar to for loops.
+2. **Full parallel:** when ordering is not an issue, such as emailing a list of 1,000,000 email recipients.
+3. **Limited parallel:** parallel with limit, such as successfully emailing 1,000,000 recipients from a list of 10 million users.
+
+
+## All of the I/O methods in the Node.js standard library provide asynchronous versions, which are non-blocking, and accept callback functions. Some methods also have blocking counterparts, which have names that end with Sync.
+
+**Blocking methods execute synchronously and non-blocking methods execute asynchronously.**
+
+
+> **Asynchronous Flow Control** synchronous and asynchronous file read. **Sy_As.js ** run this code
+
+```code
+const fs = require('node:fs');
+
+// fs.readFileSync() is blocking
+const data = fs.readFileSync('file.md'); // blocks here until file is read
+console.log(data);
+
+
+// fs.readFile() is non-blocking
+fs.readFile('file.md', (err, data) => {
+  if (err) throw err;
+  console.log(data);
+});
+
+
+```
+
+
+**concurrency is the ability to run multiple tasks at once, while throughput is the rate of data transmitted or requests processed. **
+
+### Concurrency 
+  The ability to run multiple tasks at once
+  Involves sharing resources and managing interactions
+  Can improve responsiveness, throughput, and scalability
+  Can be implemented using threads and processes
+  Can be calculated by counting the number of active connections or threads processing requests
+  
+## Throughput
+  The rate of data transmitted over a communication channel 
+  Can be measured in ops/sec, bytes/sec, MB/sec, or GB/sec 
+  Can be measured as transactions per second (TPS) or requests per second (RPS) 
+  Can be improved by lowering latency and increasing concurrency 
+
+Concurrency and throughput are related by Little's Law, which states that throughput = concurrency / latency. 
+  
+Concurrency and throughput are important in many areas of computing, including: 
+  
+Operating systems, Distributed systems, Parallel computing, Database systems, Web applications, and Cloud computing.
