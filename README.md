@@ -6,9 +6,10 @@
 ---
   * Introduction to Node.js:
 ---
-    Node.js is a runtime environment that allows you to run JavaScript code outside the browser. It’s built on the V8 JavaScript engine and enables the development of server-side applications.
-    It's known for its non-blocking, event-driven architecture which makes it ideal for I/O-heavy applications like web servers.
+  ** Node.js is a runtime environment that allows you to run JavaScript code outside the browser. It’s built on the V8 JavaScript engine and enables the development of server-side applications.
   
+  It's known for its non-blocking, event-driven architecture which makes it ideal for I/O-heavy applications like web servers.
+  **
   * How Much JavaScript Do You Need to Know to Use Node.js?
 ---
     A solid understanding of JavaScript fundamentals (variables, functions, loops, objects, etc.) is essential.
