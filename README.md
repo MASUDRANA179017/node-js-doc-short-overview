@@ -64,11 +64,9 @@
 
 ---
 
-### **2️⃣ Using HTML + Markdown for a Copy Button (Better Way)**
-GitHub **does not** natively support a "Copy" button for code blocks, but you can use an HTML snippet inside Markdown:
 
 ```COPY
-## JavaScript async operations
+// JavaScript async operations
 
 console.log("Start Operation");
 
@@ -91,7 +89,7 @@ run();
 ```
 
 
-
+---
 
   ![Image Alt](https://github.com/MASUDRANA179017/node-js-doc-short-overview/blob/main/DOCUMENTSS/Screenshot_8.png?raw=true)
 
