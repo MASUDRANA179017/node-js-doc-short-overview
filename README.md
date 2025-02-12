@@ -58,7 +58,7 @@
 # Asynchronous Work
   * Don't block
   * Example code for async operations
-
+function async () { return{
   console.log ("Start Operation");
 
   function sleep(ms) {
@@ -73,6 +73,12 @@
 
   console.log ("do someting else...");
 
+}
+}
 
   ![Image Alt](https://github.com/MASUDRANA179017/node-js-doc-short-overview/blob/main/DOCUMENTSS/Screenshot_8.png?raw=true)
+
+
+
+
 
