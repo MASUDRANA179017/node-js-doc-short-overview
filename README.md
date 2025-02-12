@@ -67,14 +67,9 @@
 ### **2️⃣ Using HTML + Markdown for a Copy Button (Better Way)**
 GitHub **does not** natively support a "Copy" button for code blocks, but you can use an HTML snippet inside Markdown:
 
-```md
-## JavaScript Sleep Function with Copy Button
+```COPY
+## JavaScript async operations
 
-Click "Copy" and run this in your browser console:
-
-```html
-<button onclick="copyCode()">📋 Copy Code</button>
-<pre id="code">
 console.log("Start Operation");
 
 function sleep(ms) {
@@ -91,15 +86,10 @@ async function run() {
 }
 
 run();
-</pre>
 
-<script>
-function copyCode() {
-  const code = document.getElementById("code").innerText;
-  navigator.clipboard.writeText(code);
-  alert("Copied to clipboard!");
-}
-</script>
+
+```COPY
+
 
 
 
