@@ -58,23 +58,50 @@
 # Asynchronous Work
   * Don't block
   * Example code for async operations
-function async () { return{
-  console.log ("Start Operation");
 
-  function sleep(ms) {
-    console.log ("operation is running");
-    setTimeout(function() {
-      console.log ("operation is done!");
-    
-    }, ms);
-  }
+  
+> **GitHub Effect:** This will render as a properly formatted code block in your `README.md`, but **without a "Copy" button**. Users will have to manually select and copy the code.
 
-  sleep (1000); 
+---
 
-  console.log ("do someting else...");
+### **2️⃣ Using HTML + Markdown for a Copy Button (Better Way)**
+GitHub **does not** natively support a "Copy" button for code blocks, but you can use an HTML snippet inside Markdown:
 
+```md
+## JavaScript Sleep Function with Copy Button
+
+Click "Copy" and run this in your browser console:
+
+```html
+<button onclick="copyCode()">📋 Copy Code</button>
+<pre id="code">
+console.log("Start Operation");
+
+function sleep(ms) {
+  console.log("operation is running");
+  return new Promise((resolve) => setTimeout(() => {
+    console.log("operation is done!");
+    resolve();
+  }, ms));
 }
+
+async function run() {
+  await sleep(1000);
+  console.log("do something else...");
 }
+
+run();
+</pre>
+
+<script>
+function copyCode() {
+  const code = document.getElementById("code").innerText;
+  navigator.clipboard.writeText(code);
+  alert("Copied to clipboard!");
+}
+</script>
+
+
 
   ![Image Alt](https://github.com/MASUDRANA179017/node-js-doc-short-overview/blob/main/DOCUMENTSS/Screenshot_8.png?raw=true)
 
